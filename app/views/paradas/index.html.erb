@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Paradas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>X</th>
+      <th>Y</th>
+      <th>Inicio</th>
+      <th>Fin</th>
+      <th>Tipo</th>
+      <th>Trayectoria</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @paradas.each do |parada| %>
+      <tr>
+        <td><%= parada.x %></td>
+        <td><%= parada.y %></td>
+        <td><%= parada.inicio %></td>
+        <td><%= parada.fin %></td>
+        <td><%= parada.tipo %></td>
+        <td><%= parada.trayectoria.nombre %></td>
+        <td><%= link_to 'Show', parada %></td>
+        <td><%= link_to 'Edit', edit_parada_path(parada) %></td>
+        <td><%= link_to 'Destroy', parada, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Parada', new_parada_path %>

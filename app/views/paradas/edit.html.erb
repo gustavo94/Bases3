@@ -1,0 +1,8 @@
+<h1>Editing Parada</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @parada %> 
+<% if controller_name == "parada" %>
+	<%= link_to 'Back', paradas_path %>
+<% end %>

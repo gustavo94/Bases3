@@ -1,0 +1,20 @@
+<%= label_tag "Trayectoria A"%>
+<%= select_tag "a", options_from_collection_for_select(@trayectorias, "id", "nombre"), id: "option_a" %>
+<%= label_tag "Trayectoria B"%>
+<%= select_tag "b", options_from_collection_for_select(@trayectorias, "id", "nombre"), id: "option_b" %>
+
+<div id="btn_comparar" href="#" class="button">Comparar</div>
+
+<div id="results">
+	<h3>MSM: </h3>
+	<p id="msm"></p>
+</div>
+<script type="text/javascript">
+	$(function() {
+		$("#btn_comparar").click(function() {
+			$.post("<%= msm_path %>", {a: $("#option_a").val(), b: $("#option_b").val()}).done(function(data){
+				$("#msm").text(data);
+			});
+		});
+	})
+</script>

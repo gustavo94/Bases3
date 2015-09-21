@@ -1,0 +1,21 @@
+<%= link_to "Trayectorias" , trayectoria_path, class: "button" %>
+<%= link_to "MSM" , msm_path, class: "button" %>
+
+<div>
+	<h1> Dimensiones elegidas: </h1>
+		<h2>Espacio:</h2>
+			<p>Funcion de distancia:</p>
+			<%=image_tag "dist_espacio"%>
+			<p>Limite permitido:  <%= Trayectorium::LIMITES[:espacio]%></p>
+			<p>Peso:  <%= Trayectorium::PESOS[:espacio]%></p>
+		<h2>Tiempo</h2>
+			<p>Funcion de distancia:</p>
+			<%=image_tag "dist_tiempo"%>
+			<p>Limite permitido:  <%= Trayectorium::LIMITES[:tiempo]%></p>
+			<p>Peso:  <%= Trayectorium::PESOS[:tiempo]%></p>
+		<h2>Semantica</h2>
+			<p>Funcion de distancia:</p>
+			<%=image_tag "dist_semantica"%>
+			<p>Limite permitido:  <%= Trayectorium::LIMITES[:semantica]%></p></div>
+			<p>Peso:  <%= Trayectorium::PESOS[:semantica]%></p>
+

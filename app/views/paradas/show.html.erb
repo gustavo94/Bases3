@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>X:</strong>
+  <%= @parada.x %>
+</p>
+
+<p>
+  <strong>Y:</strong>
+  <%= @parada.y %>
+</p>
+
+<p>
+  <strong>Inicio:</strong>
+  <%= @parada.inicio %>
+</p>
+
+<p>
+  <strong>Fin:</strong>
+  <%= @parada.fin %>
+</p>
+
+<p>
+  <strong>Tipo:</strong>
+  <%= @parada.tipo %>
+</p>
+
+<p>
+  <strong>Trayectoria:</strong>
+  <%= @parada.trayectoria_id %>
+</p>
+
+<%= link_to 'Edit', edit_parada_path(@parada) %> |
+<%= link_to 'Back', paradas_path %>

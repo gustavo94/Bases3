@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  x: 9.99
+  'y': 9.99
+  inicio: 2015-09-13 16:08:34
+  fin: 2015-09-13 16:08:34
+  tipo: MyText
+  trayectoria: 
+
+two:
+  x: 9.99
+  'y': 9.99
+  inicio: 2015-09-13 16:08:34
+  fin: 2015-09-13 16:08:34
+  tipo: MyText
+  trayectoria: 

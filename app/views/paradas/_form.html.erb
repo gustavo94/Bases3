@@ -1,0 +1,40 @@
+<%= form_for(@parada) do |f| %>
+  <% if @parada.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@parada.errors.count, "error") %> prohibited this parada from being saved:</h2>
+
+      <ul>
+      <% @parada.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :x %><br>
+    <%= f.text_field :x %>
+  </div>
+  <div class="field">
+    <%= f.label :y %><br>
+    <%= f.text_field :y %>
+  </div>
+  <div class="field">
+    <%= f.label :inicio %><br>
+    <%= f.time_select :inicio %>
+  </div>
+  <div class="field">
+    <%= f.label :fin %><br>
+    <%= f.time_select :fin %>
+  </div>
+  <div class="field">
+    <%= f.label :tipo %><br>
+    <%= f.text_area :tipo %>
+  </div>
+  <div class="field">
+    <%= f.hidden_field :trayectoria_id, value: @trayectoria_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

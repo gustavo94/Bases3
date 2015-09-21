@@ -1,9 +1,38 @@
-<%= link_to "Trayectorias" , trayectoria_path, class: "button" %>
-<%= link_to "MSM" , msm_path, class: "button" %>
-
-<div>
-	<h1> Dimensiones elegidas: </h1>
-		<h2>Espacio:</h2>
+	<h1>Multidimensional Similarity Measuring for Semantic Trajectories</h1>
+	<br>
+	<h3> Dimensiones: </h3>
+	<p> Para la implementación del algoritmo deben definirse las dimensiones que tendran las trayectorias y los parametros correspondientes a cada una que serviran para determinar la similitud</p>
+		<ul class="accordion" data-accordion>
+			<li class="accordion-navigation">
+				<a href="#panel1a">Espacio</a>
+				<div id="panel1a" class="content active">
+					<p>Funcion de distancia:</p>
+					<%=image_tag "dist_espacio"%>
+					<p>Limite permitido:  <%= Trayectorium::LIMITES[:espacio]%></p>
+					<p>Peso:  <%= Trayectorium::PESOS[:espacio]%></p>
+				</div>
+			</li>
+			<li class="accordion-navigation">
+				<a href="#panel2a">Tiempo</a>
+				<div id="panel2a" class="content">
+					<p>Funcion de distancia:</p>
+					<%=image_tag "dist_tiempo"%>
+					<p>Limite permitido:  <%= Trayectorium::LIMITES[:tiempo]%></p>
+					<p>Peso:  <%= Trayectorium::PESOS[:tiempo]%></p>
+				</div>
+			</li>
+			<li class="accordion-navigation">
+				<a href="#panel3a">Semantica</a>
+				<div id="panel3a" class="content">
+					<p>Funcion de distancia:</p>
+					<%=image_tag "dist_semantica"%>
+					<p>Limite permitido:  <%= Trayectorium::LIMITES[:semantica]%></p>
+					<p>Peso: <%= Trayectorium::PESOS[:semantica]%></p>
+				</div>
+			</li>
+</ul>
+		<!---
+		<h2>Espacio</h2>
 			<p>Funcion de distancia:</p>
 			<%=image_tag "dist_espacio"%>
 			<p>Limite permitido:  <%= Trayectorium::LIMITES[:espacio]%></p>
@@ -16,6 +45,6 @@
 		<h2>Semantica</h2>
 			<p>Funcion de distancia:</p>
 			<%=image_tag "dist_semantica"%>
-			<p>Limite permitido:  <%= Trayectorium::LIMITES[:semantica]%></p></div>
+			<p>Limite permitido:  <%= Trayectorium::LIMITES[:semantica]%></p>
 			<p>Peso:  <%= Trayectorium::PESOS[:semantica]%></p>
-
+		-->

@@ -1,20 +1,47 @@
+<% if controller_name != "paradas" %>
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Trabajo1" %></title>
+		<title><%= content_for?(:title) ? yield(:title) : "Trabajo1" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+		<%= stylesheet_link_tag    "application" %>
+		<%= javascript_include_tag "vendor/modernizr" %>
+		<%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
 
-  <body>
+	<body>
+	
+		<nav class="top-bar" data-topbar role="navigation">
+			<ul class="title-area">
+				<li class="name">
+					<h1><a href="<%=home_path %>">MSM</a></h1>
+				</li>
+			</ul>
 
-    <%= yield %>
+			<section class="top-bar-section">
+				<!-- Right Nav Section -->
+				<ul class="right">
+					<li class="<%= 'active' if controller_name == 'trayectoria'%>">
+						<a href="<%=trayectoria_path%>">Trayectorias</a></li>
+					<li class="<%= 'active' if action_name == 'comparar'%>">
+						<a href="<%= comparar_path %>">Calcular</a>
+					</li>
+				</ul>
+			</section>
+		</nav>
+		<div class="panel text-center">
+			<%= yield %>
+		</div>
+	</body>
 
-  </body>
 </html>
+<%else%>
+	<div class="panel text-center">
+			<%= yield %>
+	</div>
+<% end %>
+

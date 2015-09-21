@@ -1,3 +1,4 @@
+<div class="text-left">
 <%= form_for(@parada) do |f| %>
   <% if @parada.errors.any? %>
     <div id="error_explanation">
@@ -11,14 +12,20 @@
     </div>
   <% end %>
 
-  <div class="field">
+   <%= f.label "Coordenadas en el espacio"%>
+ <br> 
+<div class="row large-12 columns" style="
+    display: flex;">
+  <div class="field large-4 columns">
     <%= f.label :x %><br>
     <%= f.text_field :x %>
   </div>
-  <div class="field">
+  <div class="field large-4 columns">
     <%= f.label :y %><br>
     <%= f.text_field :y %>
   </div>
+</div>
+
   <div class="field">
     <%= f.label :inicio %><br>
     <%= f.time_select :inicio %>
@@ -35,6 +42,8 @@
     <%= f.hidden_field :trayectoria_id, value: @trayectoria_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Crear", class: "button"%>
   </div>
 <% end %>
+</div>
+

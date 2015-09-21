@@ -1,3 +1,5 @@
+<p id="notice" class="alert-box"><%= notice %></p>
+
 <%= form_for(@trayectorium) do |f| %>
 	<% if @trayectorium.errors.any? %>
 		<div id="error_explanation">
@@ -20,10 +22,6 @@
 	</div>
 <% end %>
 <%if action_name == "edit" %>
-	<div class="paradas">
-		<a id="new_parada" href="#" data-reveal-id= "modal_paradas" class="button">Crear parada</a>
-	</div>
-
 	<h1>Paradas</h1>
 
 <table>
@@ -68,4 +66,7 @@
 		})
 
 	</script>
+<a id="new_parada" href="#" data-reveal-id= "modal_paradas" class="button">Crear parada</a>
 <%end%>
+<%= link_to 'Back', trayectoria_path, class: "button" %>
+

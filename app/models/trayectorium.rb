@@ -12,6 +12,7 @@ class Trayectorium < ActiveRecord::Base
 	end
 
 	def self.MSM(trayectoriaA, trayectoriaB)
+		return 0 if trayectoriaB.paradas.count == 0 or trayectoriaA.paradas.count == 0
 		numerador = parity(trayectoriaA,trayectoriaB) + parity(trayectoriaB,trayectoriaA)
 		denominador = trayectoriaA.paradas.count + trayectoriaB.paradas.count
 		numerador/denominador
@@ -19,11 +20,11 @@ class Trayectorium < ActiveRecord::Base
 
 private
 	def self.score(a,b)
-		espacio = (dist_espacio(a,b) < LIMITES[:espacio])? 1 : 0
+		espacio = (dist_espacio(a,b) <= LIMITES[:espacio])? 1 : 0
 		espacio = espacio * PESOS[:espacio]
-		tiempo = (dist_tiempo(a,b) < LIMITES[:tiempo])? 1 : 0
+		tiempo = (dist_tiempo(a,b) <= LIMITES[:tiempo])? 1 : 0
 		tiempo = tiempo * PESOS[:tiempo]
-		semantica = (dist_semantica(a,b) < LIMITES[:semantica])? 1 : 0
+		semantica = (dist_semantica(a,b) <= LIMITES[:semantica])? 1 : 0
 		semantica = semantica * PESOS[:semantica]
 		puts "match tiempo #{a.tipo}  #{b.tipo} #{dist_tiempo(a,b) < LIMITES[:tiempo]}"
 
